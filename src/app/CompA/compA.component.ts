@@ -1,12 +1,6 @@
 
 //Treat this class as component     //set of feature
 import { Component } from "@angular/core";
-
-
-//Create , Registeration , Use
-
-// html , css , ts
-
 @Component(
     {
         selector    : 'Comp-A',
@@ -15,5 +9,20 @@ import { Component } from "@angular/core";
     }
 )
 export class CompAComponent{
+
+     divColor = "green";
+     fontColor = 'white';
+
+
+     isAdmin = false;
+
+     
+     
+     
+     
+     btnClick(){
+        this.divColor = "red";
+        this.fontColor = 'yellow';
+     }
 
 }

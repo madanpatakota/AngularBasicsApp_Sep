@@ -1,4 +1,21 @@
-<p>Hello world</p>
+
+<!-- 
+ngStyle
+ngClass
+Localref --------------------------VVVVVVVVVVVVVVVVVVVVVVVVVIMP
+ngIf and else
+ngTemplate
+ngSwitch -->
 
 
-<p>ANgular on septemner month</p>
+<div style="background-color: green;"> This is the Div with style</div>
+
+
+<button (click)="btnClick()">Click Me</button>
+<div [ngStyle]="{'background-color':divColor ,
+                 'color':fontColor}"> 
+    This is the Div by ngStle</div>
+
+
+<div [ngStyle]="{'background-color': isAdmin == true ? divColor:'pink'}"> 
+   Hello world</div>
