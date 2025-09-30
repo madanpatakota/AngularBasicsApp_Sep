@@ -82,6 +82,7 @@ export class CompBComponent {
 
 
     SubjectName = "Angular";
+    
 
 
 

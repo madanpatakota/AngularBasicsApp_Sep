@@ -1,10 +1,18 @@
 
 <!-- 
+
+Attrubite direcives. Apperance ..
 ngStyle
 ngClass
+
+
+ngIf
 Localref --------------------------VVVVVVVVVVVVVVVVVVVVVVVVVIMP
+ngTemplate
 ngIf and else
 ngTemplate
+
+ngFor
 ngSwitch -->
 
 
@@ -19,3 +27,112 @@ ngSwitch -->
 
 <div [ngStyle]="{'background-color': isAdmin == true ? divColor:'pink'}"> 
    Hello world</div>
+
+
+
+
+<!-- 1. class -->
+
+<div class ="redparagraph" >This is other Div</div>
+
+
+<div [ngClass] ="colorType == 'red'?'redparagraph':''" >
+    This is other Div</div>
+  
+<div 
+[ngClass] ="employeeType == 'Good'?'goodEmployee':'badEmployee'">
+    Employee Type {{employeeType}}
+</div>
+
+
+
+<!-- texbox button -->
+
+<div *ngIf="RoleID ==1;else template">
+     Secreat Key {{myPasswordKey}}: 
+</div>
+
+
+<!-- Notes
+ 1. i do't want display bydefault..
+ 2. i want to display some one who called this div then only display.
+-->
+
+<ng-template #template>
+    <div>
+      {{RoleID}} :  You are not Admin. Please cross-check withyour id 
+    </div>
+</ng-template>
+
+
+
+
+<div *ngIf="myName == 'madan'">
+     I am in Bangolore...
+</div>
+
+
+<!-- Localref # --> 
+<p #myWord>Hello world</p>
+<p #myWord1>Hello world</p>
+<button (click)="evtClickMe(myWord, myWord1)">Click Me</button>
+
+
+
+<ng-template>
+    <div>
+        This is Angular Framework
+    </div>
+</ng-template>
+
+
+
+
+<!--i can see li has repeated -->
+
+<h3>Option 1:</h3>
+<ul>
+    <li>Ram</li>
+    <li>sam</li>
+    <li>John</li>
+</ul>
+
+
+<h3>Option 2:</h3>
+<ul *ngFor="let studnet of Studentnames;let $index=index">
+    <li>{{$index}} --{{studnet}}</li>
+    <!-- <li>sam</li>
+    <li>John</li> -->
+</ul>
+
+
+
+
+<h3>Option 2:</h3>
+<ul *ngFor="let studnet of Students;let $index=index">
+    <li>{{$index}} --{{studnet.id}} -- {{studnet.name}}</li>
+    <!-- <li>sam</li>
+    <li>John</li> -->
+</ul>
+
+
+
+<!-- ngSwitch and ngswitchcase and ngswtichdefault Directive -->
+
+<div [ngSwitch]="studnetID">
+
+    <p *ngSwitchCase="1">
+        Ram is staying in UK
+    </p>
+    <p *ngSwitchCase="2">
+        Sam is staying in US
+    </p>
+    <p *ngSwitchCase="3">
+        John is staying in India
+    </p>
+
+    <p *ngSwitchDefault=""> Unable to find studnet. </p>
+
+</div>
+
+

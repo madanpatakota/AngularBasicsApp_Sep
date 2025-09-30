@@ -1,3 +1,17 @@
-p{
+/* p{
     background-color: blue;
+} */
+
+
+.redparagraph{
+     background-color: red;
+}
+
+
+.goodEmployee{
+    background-color: green;
+}
+
+.badEmployee{
+    background-color: yellow;
 }
