@@ -1,0 +1,83 @@
+
+
+<!-- Gives the Element of View referecne 
+ in the typescript file with the hellp of ref name -->
+
+ <p #paragraph>Hello world</p>
+
+ <span #spanName>Hello world!!!!</span>
+
+ 
+ <input type="text" #firstName/>
+
+
+ <button (click)="btnClick()">Click</button> 
+
+ <br>
+ <br>
+<!-- <div style="border: 3px red solid;"> -->
+ <ng-content select="[johnJob]">
+ </ng-content>
+<!-- </div> -->
+
+
+
+
+<hr>
+<h1>Div</h1>
+<div
+     *ngFor="let x of [100,200,300]">
+    <p>{{x}}</p>
+</div>
+
+<!-- 
+<div>
+     <p>100</p>
+</div>
+
+<div>
+     <p>200</p>
+</div>
+
+<div>
+     <p>300</p>
+</div> -->
+
+
+
+
+<h1>ng-container</h1>
+<ng-container 
+     *ngFor="let x of [100,200,300]">
+    <p>{{x}}</p>
+</ng-container>
+<!-- <p>100</p>
+<p>200</p>
+<p>300</p> -->
+
+
+
+
+
+<hr>
+<h1>Dynamic Templates</h1>
+<ng-template let-fn ="Firstname" 
+             let-ln ="lastname"
+             let-hm = "Hometown" 
+             #testTemplate>
+<form>
+    <input [value]="fn" type="text" placeholder="firstname">
+    <br>
+    <input [value]="ln"  type="text" placeholder="lastname">
+    <br>
+    <input [value]="hm"  type="text" placeholder="homeloaction">
+</form>
+</ng-template>
+
+
+<ng-container #containerRef>
+</ng-container>
+
+<button (click)="btnClickme()">
+    Click me For Generate the form
+</button>
